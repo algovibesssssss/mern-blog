@@ -8,7 +8,7 @@ export default function Postpage(){
     const{userInfo} = useContext(UserContext);
     const {id}=useParams();
     useEffect(()=>{
-        fetch(`https://new-mern-back.vercel.app/${id}`)
+        fetch(`http://localhost:4000/${id}`)
         .then(response=>{
             response.json().then(postInfo=>{
                 setpostInfo(postInfo);
