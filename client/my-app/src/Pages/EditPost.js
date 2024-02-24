@@ -13,7 +13,7 @@ export default function EditPost(){
     const[files,setFiles] = useState('');
     const[redirect,setRedirect]=useState(false);
     useEffect(()=>{
-        fetch('https://new-mern-back.vercel.app/'+id)
+        fetch('http://localhost:4000/'+id)
             .then(response=>{
                 response.json().then(postInfo=>{
                     setTitle(postInfo.title);
@@ -31,7 +31,7 @@ export default function EditPost(){
         data.set('content',content);
         data.set('file',files?.[0]);
         data.set('id',id);
-        const response = await fetch('https://new-mern-back.vercel.app/post',{
+        const response = await fetch('http://localhost:4000/post',{
            method: 'PUT',
             body: data,
             credentials: 'include',
